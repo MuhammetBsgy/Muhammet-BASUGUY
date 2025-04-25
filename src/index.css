@@ -1,0 +1,85 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+.cyberpunk-font {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+  color: #f4f4f4;
+  letter-spacing: -1px;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #e100ff, 0 0 30px #e100ff;
+}
+
+.cyberpunk-glitched {
+  animation: glitch 1s linear infinite;
+  display: inline-block;
+  position: relative;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.cyberpunk-banner {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid #e100ff;
+  box-shadow: 0 0 15px #e100ff, inset 0 0 10px #e100ff;
+  position: relative;
+  overflow: hidden;
+}
+
+.cyberpunk-banner::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    transparent 45%,
+    #e100ff 50%,
+    transparent 55%
+  );
+  opacity: 0.3;
+  animation: scan 6s linear infinite;
+}
+
+@keyframes scan {
+  0% {
+    transform: rotate(45deg) translateY(-100%);
+  }
+  100% {
+    transform: rotate(45deg) translateY(100%);
+  }
+}
+
+.neon-purple {
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #b700ff,
+    0 0 35px #b700ff, 0 0 40px #b700ff;
+  color: white;
+}
+
+.neon-purple:hover {
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #b700ff,
+    0 0 35px #b700ff, 0 0 40px #b700ff, 0 0 50px #b700ff;
+}
